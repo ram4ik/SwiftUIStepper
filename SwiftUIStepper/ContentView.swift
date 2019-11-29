@@ -9,8 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var value: Int = 0
+    
     var body: some View {
-        Text("Hello World")
+        ZStack {
+            VStack {
+                Stepper(value: $value, in: 0...100) {
+                    Text("")
+                }.frame(width: 300)
+                    .padding(.trailing, 200)
+                Text("\(value)")
+            }
+        }.frame(width: 400, height: 800)
     }
 }
 
